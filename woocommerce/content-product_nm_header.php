@@ -15,7 +15,7 @@ $filters_or_search_enabled = false;
 // Categories
 if ( $nm_theme_options['shop_categories'] ) {
     nm_add_page_include( 'shop_categories' );
-	
+
     $show_categories = true;
 } else {
 	$show_categories = false;
@@ -25,7 +25,7 @@ if ( $nm_theme_options['shop_categories'] ) {
 // Filters
 if ( $nm_theme_options['shop_filters'] == 'header' ) {
     nm_add_page_include( 'shop_filters' );
-    
+
 	$show_filters = true;
     $filters_or_search_enabled = true;
 } else {
@@ -54,19 +54,19 @@ if ( $nm_globals['shop_filters_popup'] || ! $filters_or_search_enabled ) {
                         <li class="nm-shop-categories-btn-wrap" data-panel="cat">
                             <a href="#categories" class="invert-color"><?php esc_html_e( 'Categories', 'woocommerce' ); ?></a>
                         </li>
-                        <?php 
+                        <?php
 							endif;
-							
+
 							if ( $show_filters ) :
 						?>
                         <li data-panel="filter">
                             <a href="#filter" class="invert-color"><?php esc_html_e( 'Filter', 'woocommerce' ); ?></a>
 						</li>
-                        <?php 
+                        <?php
 							endif;
-							
+
 							if ( $nm_globals['shop_search'] ) :
-                            
+
                             $menu_divider = apply_filters( 'nm_shop_categories_divider', '<span>&frasl;</span>' );
 						?>
                         <li class="nm-shop-search-btn-wrap" data-panel="search">
@@ -86,13 +86,14 @@ if ( $nm_globals['shop_filters_popup'] || ! $filters_or_search_enabled ) {
                 </div>
             </div>
         </div>
-        
+
         <?php if ( $show_filters ) : ?>
         <div id="nm-shop-sidebar" class="nm-shop-sidebar nm-shop-sidebar-header" data-sidebar-layout="header">
             <div class="nm-shop-sidebar-inner">
                 <div class="nm-row">
                     <div class="col-xs-12">
                         <ul id="nm-shop-widgets-ul" class="small-block-grid-<?php echo esc_attr( $nm_theme_options['shop_filters_columns'] ); ?>">
+							
                             <?php
                                 if ( is_active_sidebar( 'widgets-shop' ) ) {
                                     dynamic_sidebar( 'widgets-shop' );
@@ -102,12 +103,12 @@ if ( $nm_globals['shop_filters_popup'] || ! $filters_or_search_enabled ) {
                     </div>
                 </div>
             </div>
-            
+
             <div id="nm-shop-sidebar-layout-indicator"></div> <!-- Don't remove (used for testing sidebar/filters layout in JavaScript) -->
         </div>
         <?php endif; ?>
-        
-        <?php 
+
+        <?php
 			// Search-form
 			if ( $nm_globals['shop_search'] ) {
 				wc_get_template( 'product-searchform_nm.php' );

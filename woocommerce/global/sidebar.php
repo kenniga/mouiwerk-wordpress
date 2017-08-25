@@ -24,6 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="nm-shop-sidebar-col col-md-3 col-sm-12">
     <div id="nm-shop-sidebar" class="nm-shop-sidebar" data-sidebar-layout="default">
         <ul id="nm-shop-widgets-ul">
+			<li class="sidebar-shop-title">CATALOG</li>
             <?php
                 if ( is_active_sidebar( 'widgets-shop' ) ) {
                     dynamic_sidebar( 'widgets-shop' );

@@ -44,9 +44,11 @@ remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_pr
 // Action: woocommerce_single_product_summary
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 add_action( 'woocommerce_single_product_summary', 'nm_single_product_summary_open', 1 );
 add_action( 'woocommerce_single_product_summary', 'nm_single_product_summary_divider', 15 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 21 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_output_product_data_tabs', 100 );
 add_action( 'woocommerce_single_product_summary', 'nm_single_product_summary_close', 100 );
 
 // Action: woocommerce_after_single_product_summary
@@ -89,11 +91,11 @@ if ( isset( $_GET['nobg'] ) ) {
 ?>
 
 <div id="product-<?php the_ID(); ?>" <?php post_class( $post_class ); ?>>
-    
+
     <div class="nm-single-product-bg clear">
-    
+
         <?php wc_get_template( 'single-product/breadcrumb_nm.php' ); ?>
-        
+
         <?php nm_print_shop_notices(); ?>
 
         <div class="nm-single-product-showcase">
@@ -126,6 +128,7 @@ if ( isset( $_GET['nobg'] ) ) {
                              * @hooked WC_Structured_Data::generate_product_data() - 60
                              */
                             do_action( 'woocommerce_single_product_summary' );
+
                         ?>
 
                     </div><!-- .summary -->
@@ -133,9 +136,9 @@ if ( isset( $_GET['nobg'] ) ) {
                 </div>
             </div>
         </div>
-    
+
     </div>
-        
+
 	<?php
 		/**
 		 * woocommerce_after_single_product_summary hook.
@@ -144,7 +147,7 @@ if ( isset( $_GET['nobg'] ) ) {
 		 * @hooked woocommerce_upsell_display - 15
 		 * @hooked woocommerce_output_related_products - 20
 		 */
-		do_action( 'woocommerce_after_single_product_summary' );
+		// do_action( 'woocommerce_after_single_product_summary' );
 	?>
 
 </div><!-- #product-<?php the_ID(); ?> -->

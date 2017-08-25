@@ -959,6 +959,11 @@ ul.variation li > div:first-child {
     text-align: center;
 }
 
+li.sidebar-shop-title {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
 /* Filters */
 #nm-shop-sidebar-layout-indicator { /* Don't remove (used for testing sidebar/filters layout in JavaScript) */
 	display: none !important;
@@ -2431,19 +2436,24 @@ ul.variation li > div:first-child {
 .product .summary .product_title {
     font-size: 26px;
     line-height: 1.2;
+	font-weight: 700;
+	letter-spacing: 4px;
 }
 
 /* Summary: Price */
 .product .summary .price {
 	line-height: 1;
 	vertical-align: top;
-	margin-bottom: 0;
+	margin-bottom: 24px;
+	border-bottom: 1px solid black;
 	padding: 12px 0 24px;
 }
 .product .summary .price .amount {
 	font-size: 20px;
 	line-height: 1;
 	color: #dc9814;
+	font-weight: 700;
+    letter-spacing: 5px;
 }
 .product .summary .price del,
 .product .summary .price ins {
@@ -2861,8 +2871,10 @@ ul.variation li > div:first-child {
 /* Summary: Button */
 .product .summary .button {
 	font-family: inherit;
-	width: 100%;
-	padding: 14px;
+    width: 100%;
+    padding: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 /* Summary: Stock status */
@@ -2978,10 +2990,10 @@ ul.variation li > div:first-child {
 .woocommerce-tabs .panel.description-full {
 	padding: 17px 0 0;
 }
-.nm-tabs-panel-inner {
+/*.nm-tabs-panel-inner {
     padding-right: 102px;
     padding-left: 102px;
-}
+}*/
 
 /* Description */
 #tab-description {

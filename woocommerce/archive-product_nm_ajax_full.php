@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $nm_theme_options, $nm_globals;
-?> 
+?>
 
 
 <?php
@@ -20,14 +20,14 @@ global $nm_theme_options, $nm_globals;
 ?>
 
 
-<?php 
+<?php
 	/* Categories */
 
 	if ( $nm_theme_options['shop_categories'] ) :
-?>  
+?>
 <ul id="nm-shop-categories" class="nm-shop-categories <?php echo esc_attr( $nm_theme_options['shop_categories_layout'] ); ?>">
     <?php nm_category_menu(); ?>
-</ul>                
+</ul>
 <?php endif; ?>
 
 
@@ -66,7 +66,7 @@ global $nm_theme_options, $nm_globals;
 <?php
 	// Results bar/button
 	wc_get_template_part( 'content', 'product_nm_results_bar' );
-    
+
     // Taxonomy description
 	if ( $show_taxonomy_description ) {
 		if ( $is_product_taxonomy ) {
@@ -82,41 +82,41 @@ global $nm_theme_options, $nm_globals;
             nm_shop_description( $nm_theme_options['shop_default_description'] );
         }
 	}
-	
+
 	if ( have_posts() ) {
 
 		global $woocommerce_loop;
-		
+
 		// Set column sizes (large column is set via theme setting)
 		$woocommerce_loop['columns_small'] = '2';
 		$woocommerce_loop['columns_medium'] = '3';
-		
+
 		woocommerce_product_loop_start();
-            
+
             $nm_globals['is_categories_shortcode'] = false;
             woocommerce_product_subcategories();
-        
+
             while ( have_posts() ) {
                 the_post();
                 wc_get_template_part( 'content', 'product' );
             }
 
 		woocommerce_product_loop_end();
-	
+
 		/**
 		 * woocommerce_after_shop_loop hook
 		 *
 		 * @hooked woocommerce_pagination - 10
 		 */
 		do_action( 'woocommerce_after_shop_loop' );
-	
+
 		/**
 		 * woocommerce_after_main_content hook
 		 *
 		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
 		 */
 		do_action( 'woocommerce_after_main_content' );
-	
+
 	} elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) {
 
 		wc_get_template( 'loop/no-products-found.php' );

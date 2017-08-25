@@ -7,11 +7,11 @@ global $nm_globals, $nm_theme_options;
 ?>
 
 <div id="nm-shop-sidebar-popup-button"><span><?php esc_html_e( 'Filter Products', 'nm-framework' ); ?></span><i class="nm-font nm-font-plus"></i></div>
-        
+
 <div id="nm-shop-sidebar-popup" class="nm-shop-sidebar-popup">
-    <?php 
+    <?php
         if ( $nm_globals['shop_search_popup'] ) :
-        
+
         $searchClass = ( $nm_theme_options['shop_search_ajax'] ) ? ' nm-shop-search-ajax' : '';
     ?>
     <div id="nm-shop-search" class="nm-shop-search nm-shop-search-popup<?php echo $searchClass; ?>">

@@ -2516,8 +2516,11 @@ li.sidebar-shop-title {
     border-collapse: separate !important;
     color: #282828;
 	width: 100%;
-    margin-bottom: -1px; /* Hide bottom border */
+    margin-bottom: 20px; /* Hide bottom border */
     border: 0 none;
+}
+.nm-single-product .product_meta {
+	display: none;
 }
 .variations tr td {
     position: relative;

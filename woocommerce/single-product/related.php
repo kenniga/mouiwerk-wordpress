@@ -30,11 +30,11 @@ $woocommerce_loop['columns_medium'] = '4';
 if ( $related_products ) : ?>
 
 	<section id="nm-related" class="related products">
-        
+
         <div class="nm-row">
         	<div class="col-xs-12">
 
-                <h2><?php esc_html_e( 'Related products', 'woocommerce' ); ?></h2>
+                <h2><?php esc_html_e( 'You May Also Like', 'woocommerce' ); ?></h2>
 
                 <?php woocommerce_product_loop_start(); ?>
 
@@ -50,7 +50,7 @@ if ( $related_products ) : ?>
                     <?php endforeach; ?>
 
                 <?php woocommerce_product_loop_end(); ?>
-                
+
             </div>
         </div>
 

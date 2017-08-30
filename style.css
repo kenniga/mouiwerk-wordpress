@@ -4506,6 +4506,34 @@ div.wpcf7 .placeheld {
 	padding: 0 15px 40px;
 }
 
+.nm-footer-widgets .widget_nav_menu {
+	column-count: 2;
+}
+
+.nm-footer-widgets .widget_nav_menu li.menu-item > a {
+	font-weight: 700;
+	opacity: 1;
+	text-transform: uppercase;
+}
+
+.nm-footer-widgets .widget_nav_menu li.menu-item-has-children > ul > li > a {
+	font-weight: inherit;
+	opacity: 0.5;
+	text-transform: none;
+}
+
+.nm-footer-widgets .widget_nav_menu li.menu-item-has-children > ul > li > a:hover {
+	opacity: 1;
+}
+
+.nm-footer-widgets .widget_text p {
+	opacity: 0.5;
+}
+
+.nm-footer-widgets .widget_nav_menu .sub-menu {
+	margin-left: 0;
+}
+
 /* Bar */
 .nm-footer-bar {
 	float: left;
